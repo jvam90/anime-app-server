@@ -7,9 +7,11 @@ import { AnimeDto } from './dto';
 export class AnimeService {
   constructor(private prismaService: PrismaService) {}
 
-  getAnimes() {
-    return 'Animes';
+  async getAnimes() {
+    const animes = await this.prismaService.anime.findMany();
+    return animes;
   }
+
   async postAnimes(dto: AnimeDto) {
     //salvar no banco
     const newUser = await this.prismaService.anime.create({
