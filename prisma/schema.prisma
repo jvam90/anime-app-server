@@ -14,4 +14,5 @@ model Anime{
   id Int @id @default(autoincrement())
   name String
   progress String
+  type String
 }
