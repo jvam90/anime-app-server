@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  dev-db:
+  anime-db:
     image: postgres:13
     ports:
       - 5434:5432
