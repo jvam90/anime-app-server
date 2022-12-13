@@ -1,4 +1,4 @@
-import { Body, Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AnimeService } from './anime.service';
 import { AnimeDto } from './dto';
 
@@ -9,9 +9,13 @@ export class AnimeController {
    */
   constructor(private animeService: AnimeService) {}
 
+  @Post('/')
+  postAnimes(@Body() dto: AnimeDto) {
+    return this.animeService.postAnimes(dto);
+  }
+
   @Get('/')
-  getAnimes(@Body() dto: AnimeDto) {
-    console.log(dto);
+  getAnimes() {
     return this.animeService.getAnimes();
   }
 }
