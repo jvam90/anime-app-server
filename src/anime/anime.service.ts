@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { userInfo } from 'os';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { AnimeDto } from './dto';
 
